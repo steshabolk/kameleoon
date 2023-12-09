@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "434221a8-ff94-4ff8-98e6-57eb39bc00e4",
+		"name": "kameleoon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21742599"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"alex\",\r\n    \"email\": \"alex@gmail.com\",\r\n    \"password\": \"Password0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{user_controller}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{user_controller}}",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quote",
+			"item": [
+				{
+					"name": "create-quote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quote\": \"test quote 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}?userId=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-quote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}?userId=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-random-quote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/random",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit-quote",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quote\": \"test quote 1 edited\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-quote",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upvote-quote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/1/upvote?userId=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"1",
+								"upvote"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downvote-quote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/1/downvote?userId=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"1",
+								"downvote"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top10-quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/top",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"top"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "flop10-quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/flop",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"flop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "score-history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/1/scores",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"1",
+								"scores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "voted-quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/{{quote_controller}}/votes?userId=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"{{quote_controller}}",
+								"votes"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8085",
+			"type": "string"
+		},
+		{
+			"key": "user_controller",
+			"value": "api/v1/users",
+			"type": "string"
+		},
+		{
+			"key": "quote_controller",
+			"value": "api/v1/quotes",
+			"type": "string"
+		}
+	]
+}

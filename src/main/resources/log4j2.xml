@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false" pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%highlight{%-5level}{ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] %style{%m}{magenta}%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+        <Logger name="com.project.kameleoon" level="DEBUG" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>
